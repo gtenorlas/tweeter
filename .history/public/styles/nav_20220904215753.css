@@ -1,0 +1,8 @@
+nav {
+  height: 120px;
+  
+ }
+
+ nav > span {
+  font-family: Bungee, sans-serif;
+ }
