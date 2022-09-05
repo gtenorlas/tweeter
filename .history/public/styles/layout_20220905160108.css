@@ -29,7 +29,8 @@ main {
   background-color: inherit;
   width: 90%;
   align-content: center;
-
+  display: block;
   margin-left: auto;
   margin-right: auto;
+  width: 40%;
 }
