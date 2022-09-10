@@ -11,9 +11,7 @@ $(document).ready(function () {
 
     if (event.which === 8) {
       counter+=2;
-      if (counter>MAX_CHARS_ALLOWED) {
-        counter = MAX_CHARS_ALLOWED;
-      }
+      if (counter>MAX_CHARS_ALLOWED)
     }
     const counterOutput = $("#counter");
 

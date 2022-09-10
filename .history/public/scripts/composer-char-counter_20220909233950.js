@@ -5,16 +5,11 @@ $(document).ready(function () {
 
 
 
-    let counter = MAX_CHARS_ALLOWED - Number($("#tweet-text").val().length) - 1;
-    console.log("val", $("#tweet-text").val());
-    console.log("length", $("#tweet-text").val().length);
+    let counter = MAX_CHARS_ALLOWED - Number($("#tweet-text").val().length)-1;
+console.log("val",$("#tweet-text").val());
+console.log("length",$("#tweet-text").val().length);
 
-    if (event.which === 8) {
-      counter+=2;
-      if (counter>MAX_CHARS_ALLOWED) {
-        counter = MAX_CHARS_ALLOWED;
-      }
-    }
+
     const counterOutput = $("#counter");
 
     counterOutput.text(counter);

@@ -3,18 +3,7 @@ $(document).ready(function () {
   $("#tweet-text").on('keydown', (event) => {
     const MAX_CHARS_ALLOWED = 140;
 
-
-
-    let counter = MAX_CHARS_ALLOWED - Number($("#tweet-text").val().length) - 1;
-    console.log("val", $("#tweet-text").val());
-    console.log("length", $("#tweet-text").val().length);
-
-    if (event.which === 8) {
-      counter+=2;
-      if (counter>MAX_CHARS_ALLOWED) {
-        counter = MAX_CHARS_ALLOWED;
-      }
-    }
+    let counter = MAX_CHARS_ALLOWED - Number($("#tweet-text").val().length);
     const counterOutput = $("#counter");
 
     counterOutput.text(counter);

@@ -1,0 +1,10 @@
+$(document).ready(function() {
+
+  $("#tweet-text").on('keypress', () => {
+    let counter = Number($("#counter").text);
+    counsole.log(counter)
+    const counterOutput = $("#counter");
+    counterOutput.text = counter - 1;
+  });
+
+});
