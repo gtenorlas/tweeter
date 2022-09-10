@@ -1,0 +1,16 @@
+.new-tweet{
+  display: flex;
+  flex-direction: column;
+}
+
+form {
+  display: flex;
+  flex-direction: column;
+
+}
+
+ .new-tweet-div{
+  display:inherit;
+  flex-direction: row;
+  justify-content: space-around;
+ }
