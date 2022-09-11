@@ -10,7 +10,7 @@ $(document).ready(function () {
     if (counter < 0) {
       $counterOutput.css("color", "red");
     } else {
-      $counterOutput.css("color", "black");
+      counterOutput.css("color", "black");
     }
   });
 

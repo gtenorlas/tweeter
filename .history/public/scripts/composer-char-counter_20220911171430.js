@@ -5,12 +5,12 @@ $(document).ready(function () {
     const counter = MAX_CHARS_ALLOWED - Number($("#tweet-text").val().length) ;
     const $counterOutput = $("#counter");
 
-    $counterOutput.text(counter);
+    counterOutput.text(counter);
 
     if (counter < 0) {
-      $counterOutput.css("color", "red");
+      counterOutput.css("color", "red");
     } else {
-      $counterOutput.css("color", "black");
+      counterOutput.css("color", "black");
     }
   });
 

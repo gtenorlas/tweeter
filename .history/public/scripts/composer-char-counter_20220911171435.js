@@ -8,9 +8,9 @@ $(document).ready(function () {
     $counterOutput.text(counter);
 
     if (counter < 0) {
-      $counterOutput.css("color", "red");
+      counterOutput.css("color", "red");
     } else {
-      $counterOutput.css("color", "black");
+      counterOutput.css("color", "black");
     }
   });
 
