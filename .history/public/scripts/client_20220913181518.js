@@ -52,7 +52,16 @@ const renderTweets = function (tweets) {
   }
 };
 
-
+const loadTweets = ()=>{
+  const url = "http://localhost:8080/tweets";
+  $.ajax(url, { method: 'GET' })
+    .then(function(data){
+      console.log("data",data);
+    })
+    .catch((error)=>{
+      console.log("Error",error);
+    });
+}
 
 const createTweetElement = function (tweet) {
   const $tweet = `
@@ -78,7 +87,7 @@ const createTweetElement = function (tweet) {
   return $tweet;
 };
 
-const tweetSubmitEvent = () => {
+const tweetSubmitEvent(){
   $("#tweet-form").submit((event) => {
     event.preventDefault()
 
@@ -92,8 +101,8 @@ const tweetSubmitEvent = () => {
     $.ajax({
       url: url,
       success: (response) => {
-        console.log("response", response);
-
+        console.log("response",response);
+      
       },
       error: (err) => console.error(err),
     })
@@ -103,11 +112,28 @@ const tweetSubmitEvent = () => {
 }
 $(document).ready(function () {
   renderTweets(data);
-  tweetSubmitEvent();
+  loadTweets();
 
-  //loadTweets();
+  $("#tweet-form").submit((event) => {
+    event.preventDefault()
 
- 
+    const text = $("#tweet-text").val();
+    const user = $("#user").text().replace(" ", "%20");
+    const url = `http://localhost:8080/?user=${user}&text=${text}`;
 
+    console.log("user", user);
+    console.log("text", text);
+
+    $.ajax({
+      url: url,
+      success: (response) => {
+        console.log("response",response);
+      
+      },
+      error: (err) => console.error(err),
+    })
+
+
+  })
 
 });

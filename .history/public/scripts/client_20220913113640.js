@@ -52,8 +52,6 @@ const renderTweets = function (tweets) {
   }
 };
 
-
-
 const createTweetElement = function (tweet) {
   const $tweet = `
       <article>
@@ -78,36 +76,26 @@ const createTweetElement = function (tweet) {
   return $tweet;
 };
 
-const tweetSubmitEvent = () => {
-  $("#tweet-form").submit((event) => {
-    event.preventDefault()
-
-    const text = $("#tweet-text").val();
-    const user = $("#user").text().replace(" ", "%20");
-    const url = `http://localhost:8080/?user=${user}&text=${text}`;
-
-    console.log("user", user);
-    console.log("text", text);
-
-    $.ajax({
-      url: url,
-      success: (response) => {
-        console.log("response", response);
-
-      },
-      error: (err) => console.error(err),
-    })
-
-
-  })
-}
 $(document).ready(function () {
   renderTweets(data);
-  tweetSubmitEvent();
 
-  //loadTweets();
+  $("#tweet-form").submit((event) => {
+    alert("im in submit")
+    event.preventDefault()
 
- 
+    // Get some values from elements on the page:
+    var $form = $(this),
+      term = $form.find("#tweet-text").val(),
+      url = $form.attr("action");
 
+    // Send the data using post
+    const posting = $.post(url, { s: term });
+
+    // Put the results in html
+    posting.done(function (data) {
+    console.log(data)
+    });
+
+  })
 
 });

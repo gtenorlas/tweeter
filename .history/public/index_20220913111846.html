@@ -48,7 +48,7 @@
     </div>
     <br>
     <div>
-      <h2 id="user"><b>Your</b> Name</h2>
+      <h2><b>Your</b> Name</h2>
     </div>
   </header>
 
@@ -56,11 +56,11 @@
   <main class="container" id="tweets-container">
     <section class="new-tweet">
       <h2>Compose Tweet</h2>
-      <form method="POST" action="/tweets" id="tweet-form">
+      <form method="POST" action="/tweets">
         <label for="tweet-text">What are you humming about?</label>
         <textarea name="text" id="tweet-text"></textarea>
         <div class="new-tweet-div">
-          <button type="submit">Tweet</button>
+          <button type="submit" id="">Tweet</button>
           <output name="counter" class="counter" for="tweet-text" id="counter">140</output>
         </div>
       </form>

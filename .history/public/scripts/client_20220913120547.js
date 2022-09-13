@@ -52,8 +52,6 @@ const renderTweets = function (tweets) {
   }
 };
 
-
-
 const createTweetElement = function (tweet) {
   const $tweet = `
       <article>
@@ -78,36 +76,41 @@ const createTweetElement = function (tweet) {
   return $tweet;
 };
 
-const tweetSubmitEvent = () => {
+$(document).ready(function () {
+  renderTweets(data);
+
   $("#tweet-form").submit((event) => {
     event.preventDefault()
 
     const text = $("#tweet-text").val();
-    const user = $("#user").text().replace(" ", "%20");
-    const url = `http://localhost:8080/?user=${user}&text=${text}`;
+    const user = $("#user").val();
+    const CDN_API = `http://localhost:8080/?user=${user}&text=${text}`;
 
-    console.log("user", user);
-    console.log("text", text);
+    console.log("user",user);
+    console.log("text",text);
 
-    $.ajax({
-      url: url,
+/*     $.ajax({
+      url: CDN_API,
       success: (response) => {
-        console.log("response", response);
+        const libraries = response.results;
+        let outputHTML = '';
 
+        for (const library of libraries) {
+          outputHTML += `
+            <li>
+              <a href="${library.latest}">
+                ${library.name}
+              </a>
+            </li>
+          `
+        }
+
+        $ul.html(outputHTML)
       },
       error: (err) => console.error(err),
-    })
+    }) */
 
 
   })
-}
-$(document).ready(function () {
-  renderTweets(data);
-  tweetSubmitEvent();
-
-  //loadTweets();
-
- 
-
 
 });

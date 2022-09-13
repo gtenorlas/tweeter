@@ -52,7 +52,14 @@ const renderTweets = function (tweets) {
   }
 };
 
-
+const loadTweets = ()=>{
+  const url = "http://localhost:8080/tweets";
+  $.ajax('more-posts.html', { method: 'GET' })
+    .then(function (morePostsHtml) {
+      console.log('Success: ', morePostsHtml);
+      $button.replaceWith(morePostsHtml);
+    });
+}
 
 const createTweetElement = function (tweet) {
   const $tweet = `
@@ -78,7 +85,9 @@ const createTweetElement = function (tweet) {
   return $tweet;
 };
 
-const tweetSubmitEvent = () => {
+$(document).ready(function () {
+  renderTweets(data);
+
   $("#tweet-form").submit((event) => {
     event.preventDefault()
 
@@ -92,22 +101,13 @@ const tweetSubmitEvent = () => {
     $.ajax({
       url: url,
       success: (response) => {
-        console.log("response", response);
-
+        console.log("response",response);
+      
       },
       error: (err) => console.error(err),
     })
 
 
   })
-}
-$(document).ready(function () {
-  renderTweets(data);
-  tweetSubmitEvent();
-
-  //loadTweets();
-
- 
-
 
 });

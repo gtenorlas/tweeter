@@ -4,6 +4,11 @@
  * Reminder: Use (and do all your DOM work in) jQuery's document ready function
  */
 
+
+
+
+
+
 // Fake data taken from initial-tweets.json
 const data = [
   {
@@ -31,17 +36,7 @@ const data = [
   }
 ];
 
-const daysDifference = (serialDate) => {
-  //The number of milliseconds in one day
-  const ONE_DAY = 1000 * 60 * 60 * 24;
-  const today = Date.now();
-  const difference = Math.abs(serialDate - today);
-
-  //convert back to days
-  return Math.round(difference / ONE_DAY);
-};
-
-const renderTweets = function (tweets) {
+const renderTweets = function(tweets) {
   // loops through tweets
   // calls createTweetElement for each tweet
   // takes return value and appends it to the tweets container
@@ -52,9 +47,7 @@ const renderTweets = function (tweets) {
   }
 };
 
-
-
-const createTweetElement = function (tweet) {
+const createTweetElement = function(tweet) {
   const $tweet = `
       <article>
       <header class="article-header">
@@ -78,36 +71,6 @@ const createTweetElement = function (tweet) {
   return $tweet;
 };
 
-const tweetSubmitEvent = () => {
-  $("#tweet-form").submit((event) => {
-    event.preventDefault()
-
-    const text = $("#tweet-text").val();
-    const user = $("#user").text().replace(" ", "%20");
-    const url = `http://localhost:8080/?user=${user}&text=${text}`;
-
-    console.log("user", user);
-    console.log("text", text);
-
-    $.ajax({
-      url: url,
-      success: (response) => {
-        console.log("response", response);
-
-      },
-      error: (err) => console.error(err),
-    })
-
-
-  })
-}
-$(document).ready(function () {
+$(document).ready(function() {
   renderTweets(data);
-  tweetSubmitEvent();
-
-  //loadTweets();
-
- 
-
-
 });

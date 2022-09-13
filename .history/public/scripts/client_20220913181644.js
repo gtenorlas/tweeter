@@ -52,7 +52,16 @@ const renderTweets = function (tweets) {
   }
 };
 
-
+const loadTweets = () => {
+  const url = "http://localhost:8080/tweets";
+  $.ajax(url, { method: 'GET' })
+    .then(function (data) {
+      console.log("data", data);
+    })
+    .catch((error) => {
+      console.log("Error", error);
+    });
+}
 
 const createTweetElement = function (tweet) {
   const $tweet = `
@@ -103,8 +112,8 @@ const tweetSubmitEvent = () => {
 }
 $(document).ready(function () {
   renderTweets(data);
-  tweetSubmitEvent();
-
+  tweetSubmitEventI();
+  
   //loadTweets();
 
  

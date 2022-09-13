@@ -52,8 +52,6 @@ const renderTweets = function (tweets) {
   }
 };
 
-
-
 const createTweetElement = function (tweet) {
   const $tweet = `
       <article>
@@ -78,7 +76,9 @@ const createTweetElement = function (tweet) {
   return $tweet;
 };
 
-const tweetSubmitEvent = () => {
+$(document).ready(function () {
+  renderTweets(data);
+
   $("#tweet-form").submit((event) => {
     event.preventDefault()
 
@@ -92,22 +92,14 @@ const tweetSubmitEvent = () => {
     $.ajax({
       url: url,
       success: (response) => {
-        console.log("response", response);
-
+        const results= response.results;
+        console.log("results")
+      
       },
       error: (err) => console.error(err),
     })
 
 
   })
-}
-$(document).ready(function () {
-  renderTweets(data);
-  tweetSubmitEvent();
-
-  //loadTweets();
-
- 
-
 
 });
