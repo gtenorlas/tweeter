@@ -99,11 +99,11 @@ const tweetSubmitEvent = () => {
     const MAX_CHARS_ALLOWED = 140;
     const text = $("#tweet-text").val();
 
-    if (!validateForm(text)) {
-      return;
+    if (validateForm(text) {
+      0
     }
     
-    
+    }
 
 
     const user = $("#user").text().replace(" ", "%20");

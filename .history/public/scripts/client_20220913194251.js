@@ -79,31 +79,13 @@ const createTweetElement = function (tweet) {
   return $tweet;
 };
 
-const validateForm = (text)=>{
-  const MAX_CHARS_ALLOWED = 140;
-
-  if (text.length > MAX_CHARS_ALLOWED) {
-    alert("Your tweet is longer than the the maximum allowed");
-    return false;
-  } else if (!text.trim()) {
-    alert("Your must enter a tweet");
-    return false;
-  }
-  return true;
-}
-
 const tweetSubmitEvent = () => {
   $("#tweet-form").submit((event) => {
     event.preventDefault()
 
-    const MAX_CHARS_ALLOWED = 140;
     const text = $("#tweet-text").val();
 
-    if (!validateForm(text)) {
-      return;
-    }
-    
-    
+    if(text.length)
 
 
     const user = $("#user").text().replace(" ", "%20");

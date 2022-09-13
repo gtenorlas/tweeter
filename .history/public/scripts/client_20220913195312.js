@@ -99,11 +99,13 @@ const tweetSubmitEvent = () => {
     const MAX_CHARS_ALLOWED = 140;
     const text = $("#tweet-text").val();
 
-    if (!validateForm(text)) {
+    if (text.length > MAX_CHARS_ALLOWED) {
+      alert("Your tweet is longer than the the maximum allowed");
+      return;
+    } else if (!text.trim()) {
+      alert("Your must enter a tweet");
       return;
     }
-    
-    
 
 
     const user = $("#user").text().replace(" ", "%20");
