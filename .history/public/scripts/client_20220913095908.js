@@ -40,7 +40,10 @@ const daysDifference = (serialDate) => {
   const difference = Math.abs(serialDate - today);
 
   //convert back to days
+  console.log(Math.round(difference / ONE_DAY));
   return Math.round(difference / ONE_DAY);
+
+
 };
 
 const renderTweets = function(tweets) {

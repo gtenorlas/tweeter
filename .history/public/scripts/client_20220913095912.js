@@ -41,6 +41,8 @@ const daysDifference = (serialDate) => {
 
   //convert back to days
   return Math.round(difference / ONE_DAY);
+
+
 };
 
 const renderTweets = function(tweets) {
