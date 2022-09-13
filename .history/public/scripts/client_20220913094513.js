@@ -18,7 +18,7 @@ const data = [
     "content": {
       "text": "If I have seen further it is by standing on the shoulders of giants"
     },
-    "created_at": 1662682320000
+    "created_at": 1461116232227
   },
   {
     "user": {
@@ -31,14 +31,14 @@ const data = [
     },
     "created_at": 1461113959088
   }
-];
+]
 
 const daysDifference = (serialDate) => {
   //The number of milliseconds in one day
   const ONE_DAY = 1000 * 60 * 60 * 24;
   const today = Date.now();
   console.log("today", today);
-  console.log("serialDAte",serialDate);
+  console.log("serialDAte")
   const difference = Math.abs(serialDate - today);
 
   //convert back to days
@@ -46,9 +46,9 @@ const daysDifference = (serialDate) => {
   return Math.round(difference / ONE_DAY);
 
 
-};
+}
 
-const renderTweets = function(tweets) {
+const renderTweets = function (tweets) {
   // loops through tweets
   // calls createTweetElement for each tweet
   // takes return value and appends it to the tweets container
@@ -57,9 +57,9 @@ const renderTweets = function(tweets) {
     const $tweet = createTweetElement(tweet);
     $('#tweets-container').append($tweet);
   }
-};
+}
 
-const createTweetElement = function(tweet) {
+const createTweetElement = function (tweet) {
   const $tweet = `
       <article>
       <header class="article-header">
@@ -81,8 +81,8 @@ const createTweetElement = function(tweet) {
       </article>
   `;
   return $tweet;
-};
+}
 
-$(document).ready(function() {
+$(document).ready(function () {
   renderTweets(data);
 });
