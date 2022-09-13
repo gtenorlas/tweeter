@@ -67,7 +67,7 @@ const createTweetElement = function (tweet) {
       </h4>
       <hr />
       <footer class="article-footer">
-        <span>${timeago.format(tweet.created_at)}</span>
+        <span>${daysDifference(tweet.created_at)} days ago</span>
         <span class="article-footer-span-right">
           <i class="fa-solid fa-flag"></i>
           <i class="fa-solid fa-retweet"></i>
@@ -116,7 +116,7 @@ const loadTweets = () => {
 }
 
 $(document).ready(function () {
-  console.log(timeago.format(Date.now()));
+  console.log(f(Date.now()));
   //renderTweets(data);
   tweetSubmitEvent();
   loadTweets();
