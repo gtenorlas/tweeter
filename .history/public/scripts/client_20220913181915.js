@@ -102,21 +102,15 @@ const tweetSubmitEvent = () => {
   })
 }
 
-const loadTweets = () => {
-  const url = "http://localhost:8080/tweets";
-  $.ajax(url, { method: 'GET' })
-    .then(function (data) {
-      console.log("data", data);
-      renderTweets(data);
-    })
-    .catch((error) => {
-      console.log("Error", error);
-    });
-}
+
 
 $(document).ready(function () {
-  //renderTweets(data);
+  renderTweets(data);
   tweetSubmitEvent();
-  loadTweets();
+
+  //loadTweets();
+
+ 
+
 
 });

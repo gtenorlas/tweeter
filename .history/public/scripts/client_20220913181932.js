@@ -107,7 +107,6 @@ const loadTweets = () => {
   $.ajax(url, { method: 'GET' })
     .then(function (data) {
       console.log("data", data);
-      renderTweets(data);
     })
     .catch((error) => {
       console.log("Error", error);
@@ -115,7 +114,7 @@ const loadTweets = () => {
 }
 
 $(document).ready(function () {
-  //renderTweets(data);
+  renderTweets(data);
   tweetSubmitEvent();
   loadTweets();
 

@@ -115,7 +115,7 @@ const loadTweets = () => {
 }
 
 $(document).ready(function () {
-  //renderTweets(data);
+  renderTweets(data);
   tweetSubmitEvent();
   loadTweets();
 
