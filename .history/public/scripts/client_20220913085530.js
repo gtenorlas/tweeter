@@ -37,11 +37,6 @@ const renderTweets = function (tweets) {
   // loops through tweets
   // calls createTweetElement for each tweet
   // takes return value and appends it to the tweets container
-
-  for (const tweet of tweets) {
-    const $tweet = createTweetElement(tweet);
-    $('#tweets-container').append($tweet);
-  }
 }
 
 const createTweetElement = function (tweet) {
@@ -68,6 +63,4 @@ const createTweetElement = function (tweet) {
   return $tweet;
 }
 
-$(document).ready(function () {
-  renderTweets(data);
-});
+renderTweets(data);

@@ -69,5 +69,5 @@ const createTweetElement = function (tweet) {
 }
 
 $(document).ready(function () {
-  renderTweets(data);
+renderTweets(data);
 });

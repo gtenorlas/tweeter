@@ -37,22 +37,17 @@ const renderTweets = function (tweets) {
   // loops through tweets
   // calls createTweetElement for each tweet
   // takes return value and appends it to the tweets container
-
-  for (const tweet of tweets) {
-    const $tweet = createTweetElement(tweet);
-    $('#tweets-container').append($tweet);
-  }
 }
 
 const createTweetElement = function (tweet) {
-  const $tweet = `
+  let $tweet = `
       <article>
       <header class="article-header">
-        <h3 class="article-header-left"><span><img src=${tweet.user.avatars} alt="avatars"/></span>${tweet.user.name}</h3>
-        <h3>${tweet.user.handle}</h3>
+        <h3 class="article-header-left"><span><i class="fa-solid fa-snowman circle"></i></span>Name</h3>
+        <h3>@Username</h3>
       </header>
-      <h4 class="article-tweet-h4">
-        ${tweet.content.text}
+      <h4 class="article-tweet-h4">Lorem ipsum dolor sit amet consectetur, adipisicing elit. Illo saepe voluptate maxime eligendi at! Ipsum,
+        culpa quidem magni cumque reprehenderit.
       </h4>
       <hr />
       <footer class="article-footer">
@@ -64,10 +59,9 @@ const createTweetElement = function (tweet) {
         </span>
       </footer>
       </article>
-  `;
+
+                 `;
   return $tweet;
 }
 
-$(document).ready(function () {
-  renderTweets(data);
-});
+renderTweets(data);

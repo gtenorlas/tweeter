@@ -15,14 +15,14 @@ article:hover {
   display: inherit;
   flex-direction: row;
   justify-content: space-between;
-  align-items: center;
+  align-items: center'
 }
 
 .article-header-left {
   display:inherit;
   flex-direction: row;
   gap: 10px;
-  align-items: center;
+
 }
 
 .article-footer {
