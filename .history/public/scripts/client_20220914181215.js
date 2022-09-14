@@ -113,10 +113,10 @@ const validateForm = (text) => {
 /*
 Helper functiont to animate the node to slide up and slide down
 
-toHide -> true will hide the object, false will animate the object
-message -> the error message that will be displayed on screen
-$node -> the element
+toHide -> true then hide 
+
 */
+
 const animateError = ($node, message, toHide) => {
   if (toHide) {
     $node.hide();
@@ -129,7 +129,6 @@ const animateError = ($node, message, toHide) => {
   $node.slideDown("slow");
   return;
 }
-
 
 const tweetSubmitEvent = () => {
   $("#tweet-form").submit((event) => {
@@ -172,28 +171,6 @@ const rightNavAnimate = () => {
   });
 }
 
-/*
-Handle event when the right nav is clicked to show/hide the form on screen
-*/
-const rightNavClickEvent = () => {
-  $div = $("#div-nav-right");
-  $iAngleDown = $("#angle-solid");
-  $section = $("section");
-  $textArea = $("#tweet-text");
-
-  $div.click(() => {
-    if ($section.is(":visible")) {
-      $section.slideUp("slow");
-      $iAngleDown.removeClass("fa-angles-up");
-      $iAngleDown.addClass("fa-angles-down                         ");
-    } else {
-      $section.slideDown("slow");
-      $iAngleDown.removeClass("fa-angles-down");
-      $iAngleDown.addClass("fa-angles-up");
-      $textArea.focus();
-    }
-  });
-}
 
 const loadTweets = () => {
   const url = "http://localhost:8080/tweets";
@@ -211,6 +188,5 @@ $(document).ready(function () {
   tweetSubmitEvent();
   loadTweets();
   rightNavAnimate();
-  rightNavClickEvent();
 
 });

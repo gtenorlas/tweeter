@@ -172,27 +172,10 @@ const rightNavAnimate = () => {
   });
 }
 
-/*
-Handle event when the right nav is clicked to show/hide the form on screen
-*/
 const rightNavClickEvent = () => {
   $div = $("#div-nav-right");
-  $iAngleDown = $("#angle-solid");
-  $section = $("section");
-  $textArea = $("#tweet-text");
 
-  $div.click(() => {
-    if ($section.is(":visible")) {
-      $section.slideUp("slow");
-      $iAngleDown.removeClass("fa-angles-up");
-      $iAngleDown.addClass("fa-angles-down                         ");
-    } else {
-      $section.slideDown("slow");
-      $iAngleDown.removeClass("fa-angles-down");
-      $iAngleDown.addClass("fa-angles-up");
-      $textArea.focus();
-    }
-  });
+  $div.click(());
 }
 
 const loadTweets = () => {
@@ -211,6 +194,5 @@ $(document).ready(function () {
   tweetSubmitEvent();
   loadTweets();
   rightNavAnimate();
-  rightNavClickEvent();
 
 });

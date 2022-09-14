@@ -131,6 +131,7 @@ const animateError = ($node, message, toHide) => {
 }
 
 
+
 const tweetSubmitEvent = () => {
   $("#tweet-form").submit((event) => {
     event.preventDefault()
@@ -172,28 +173,6 @@ const rightNavAnimate = () => {
   });
 }
 
-/*
-Handle event when the right nav is clicked to show/hide the form on screen
-*/
-const rightNavClickEvent = () => {
-  $div = $("#div-nav-right");
-  $iAngleDown = $("#angle-solid");
-  $section = $("section");
-  $textArea = $("#tweet-text");
-
-  $div.click(() => {
-    if ($section.is(":visible")) {
-      $section.slideUp("slow");
-      $iAngleDown.removeClass("fa-angles-up");
-      $iAngleDown.addClass("fa-angles-down                         ");
-    } else {
-      $section.slideDown("slow");
-      $iAngleDown.removeClass("fa-angles-down");
-      $iAngleDown.addClass("fa-angles-up");
-      $textArea.focus();
-    }
-  });
-}
 
 const loadTweets = () => {
   const url = "http://localhost:8080/tweets";
@@ -211,6 +190,5 @@ $(document).ready(function () {
   tweetSubmitEvent();
   loadTweets();
   rightNavAnimate();
-  rightNavClickEvent();
 
 });
