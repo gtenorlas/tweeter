@@ -20,16 +20,15 @@ nav>span {
 }
 
 
+
 #angle-down {
   color: red;
   text-align: center;
 }
 
-.pointer {
-  cursor: pointer;
-}
+.pointer {cursor: pointer;}
 
-.angle-down-animate {
+.angle-down-animate{
   position: relative;
   animation: glide 2s ease-in-out alternate infinite;
 }

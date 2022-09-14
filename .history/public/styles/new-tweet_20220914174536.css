@@ -50,10 +50,4 @@ button {
   padding-right: 10px;
 }
 
-section h2 {
-  margin-top: 0px;
-}
-
-section {
-  display: none;
-}
+section{}

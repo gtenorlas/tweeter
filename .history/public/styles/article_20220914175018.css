@@ -5,6 +5,7 @@ article {
   border-width: 5px;
   padding-left: 20px;
   padding-right: 20px;
+  padding-top: 10px;
 }
 
 article:hover {
