@@ -152,8 +152,7 @@ const tweetSubmitEvent = () => {
 }
 
 /*
-Create hover event on the right nav to animate the angle-down
-by adding and removing class related to the animation
+
 */
 const rightNavAnimate = () => {
   $div = $("#div-nav-right");

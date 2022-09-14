@@ -19,14 +19,22 @@ nav>span {
 
 }
 
+.div-nav-right:hover {
+  position: relative;
+  animation: glide 2s ease-in-out alternate infinite;
+}
 
+#angel-text{
+  transition:none important!;
+}
 
 #angle-down {
   color: red;
   text-align: center;
 }
 
-.angle-down-animate{
+#angle-down:hover {
+
   position: relative;
   animation: glide 2s ease-in-out alternate infinite;
 }
@@ -39,7 +47,7 @@ nav>span {
 
   to {
     left: 0px;
-    top: 15px;
+    top: 20px;
   }
 
 }

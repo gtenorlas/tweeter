@@ -12,34 +12,16 @@ nav {
   justify-content: space-between;
   align-items: flex-end;
   position: fixed;
-}
+ }
 
-nav>span {
+ nav > span {
   font-family: Bungee, sans-serif;
 
-}
+ }
 
-
-
-#angle-down {
-  color: red;
+ #angle-down {
+  color:red;
   text-align: center;
-}
+ }
 
-.angle-down-animate{
-  position: relative;
-  animation: glide 2s ease-in-out alternate infinite;
-}
-
-@keyframes glide {
-  from {
-    left: 0px;
-    top: 0px;
-  }
-
-  to {
-    left: 0px;
-    top: 15px;
-  }
-
-}
+ #angle-down:

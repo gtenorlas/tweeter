@@ -19,16 +19,16 @@ nav>span {
 
 }
 
-
-
 #angle-down {
   color: red;
   text-align: center;
 }
 
-.angle-down-animate{
-  position: relative;
-  animation: glide 2s ease-in-out alternate infinite;
+#angle-down:hover {
+  width:24px;
+  height:24px;
+  position:relative;
+  animation: glide 4s ease-in-out alternate infinite;
 }
 
 @keyframes glide {
@@ -39,7 +39,7 @@ nav>span {
 
   to {
     left: 0px;
-    top: 15px;
+    top: 20px;
   }
 
 }

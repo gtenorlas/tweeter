@@ -27,6 +27,7 @@ nav>span {
 }
 
 .angle-down-animate{
+
   position: relative;
   animation: glide 2s ease-in-out alternate infinite;
 }
@@ -39,7 +40,7 @@ nav>span {
 
   to {
     left: 0px;
-    top: 15px;
+    top: 20px;
   }
 
 }

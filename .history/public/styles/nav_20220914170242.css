@@ -26,7 +26,8 @@ nav>span {
   text-align: center;
 }
 
-.angle-down-animate{
+.angle-down-animate:hover {
+
   position: relative;
   animation: glide 2s ease-in-out alternate infinite;
 }
@@ -39,7 +40,7 @@ nav>span {
 
   to {
     left: 0px;
-    top: 15px;
+    top: 20px;
   }
 
 }
