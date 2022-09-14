@@ -43,9 +43,10 @@ const daysDifference = (serialDate) => {
 };
 
 const resetTweets = () => {
-  $("article").remove();
-  $("#tweet-form")[0].reset();
-  $("#counter").text("140");
+       
+       
+
+  
 }
 
 const renderTweets = function (tweets) {
@@ -109,14 +110,12 @@ const tweetSubmitEvent = () => {
       return;
     }
 
-    const url = "/tweets/";
 
     $.ajax({
       type: "POST",
       url: url,
-      data: { text },
+      data: { text},
       success: () => {
-        resetTweets();
         loadTweets();
       },
       error: (err) => console.error(err),

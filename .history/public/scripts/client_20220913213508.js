@@ -43,9 +43,24 @@ const daysDifference = (serialDate) => {
 };
 
 const resetTweets = () => {
-  $("article").remove();
-  $("#tweet-form")[0].reset();
-  $("#counter").text("140");
+  const $container = $("#tweets-container");
+  const $section = `
+    <section class="new-tweet">
+        <h2>Compose Tweet</h2>
+        <form method="POST" action="/tweets" id="tweet-form">
+          <label for="tweet-text">What are you humming about?</label>
+          <textarea name="text" id="tweet-text"></textarea>
+          <div class="new-tweet-div">
+            <button type="submit">Tweet</button>
+            <output name="counter" class="counter" for="tweet-text" id="counter">140</output>
+          </div>
+        </form>
+      </section>
+    `;
+
+  $container.empty();
+  $container.append($section);
+  
 }
 
 const renderTweets = function (tweets) {
@@ -109,14 +124,12 @@ const tweetSubmitEvent = () => {
       return;
     }
 
-    const url = "/tweets/";
 
     $.ajax({
       type: "POST",
       url: url,
-      data: { text },
+      data: { text},
       success: () => {
-        resetTweets();
         loadTweets();
       },
       error: (err) => console.error(err),

@@ -45,7 +45,7 @@ const daysDifference = (serialDate) => {
 const resetTweets = () => {
   $("article").remove();
   $("#tweet-form")[0].reset();
-  $("#counter").text("140");
+  $("#counter").text()
 }
 
 const renderTweets = function (tweets) {
