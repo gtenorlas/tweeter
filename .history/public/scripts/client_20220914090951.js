@@ -51,7 +51,7 @@ const resetTweets = () => {
 /*
 Escape function to preventing XSS
 */
-const escapeXSS = function (str) {
+const escape = function (str) {
   let div = document.createElement("div");
   div.appendChild(document.createTextNode(str));
   return div.innerHTML;
@@ -79,7 +79,7 @@ const createTweetElement = function (tweet) {
         <h3>${tweet.user.handle}</h3>
       </header>
       <h4 class="article-tweet-h4">
-        ${escapeXSS(tweet.content.text)}
+        ${tweet.content.text}
       </h4>
       <hr />
       <footer class="article-footer">

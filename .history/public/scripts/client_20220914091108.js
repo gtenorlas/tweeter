@@ -79,7 +79,7 @@ const createTweetElement = function (tweet) {
         <h3>${tweet.user.handle}</h3>
       </header>
       <h4 class="article-tweet-h4">
-        ${escapeXSS(tweet.content.text)}
+        ${escape(tweet.content.text)}
       </h4>
       <hr />
       <footer class="article-footer">
