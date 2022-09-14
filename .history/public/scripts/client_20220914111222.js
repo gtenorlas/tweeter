@@ -46,7 +46,6 @@ const resetTweets = () => {
   $("article").remove();
   $("#tweet-form")[0].reset();
   $("#counter").text("140");
-  animateError($("#h4-section-error"), null, true);
 }
 
 /*
@@ -142,6 +141,7 @@ const tweetSubmitEvent = () => {
       data: { text },
       success: () => {
         resetTweets();
+        
         loadTweets();
       },
       error: (err) => console.error(err),

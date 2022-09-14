@@ -39,7 +39,6 @@ button {
 }
 
 #h4-section-error {
-  display: none;
   border: 3px solid #d1786d;
   color: red;
   text-align: center;

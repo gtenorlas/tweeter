@@ -46,7 +46,6 @@ const resetTweets = () => {
   $("article").remove();
   $("#tweet-form")[0].reset();
   $("#counter").text("140");
-  animateError($("#h4-section-error"), null, true);
 }
 
 /*
@@ -101,10 +100,16 @@ const validateForm = (text) => {
   const $h4 = $("#h4-section-error");
 
   if (text.length > MAX_CHARS_ALLOWED) {
-    animateError($h4, "Your tweet is longer than the maximum allowed.", false)
+    animateError($h4,"Your tweet is longer than the the maximum allowed.",false)
+    $h4.text("Your tweet is longer than the the maximum allowed.");
+    $h4.prepend('<span><i class="fa-solid fa-triangle-exclamation"></i></span>');
+    $h4.slideDown("slow");
     return false;
   } else if (!text.trim()) {
-    animateError($h4, "You must enter a tweet.", false)
+    animateError($h4,"You must enter a tweet.",false)
+    $h4.text("Your must enter a tweet.");
+    $h4.prepend('<span><i class="fa-solid fa-triangle-exclamation"></i></span>');
+    $h4.slideDown("slow");
     return false;
   }
   return true;
@@ -112,12 +117,11 @@ const validateForm = (text) => {
 
 const animateError = ($node, message, toHide) => {
   if (toHide) {
-    $node.hide();
+    $node.slideUp("slow");
     return;
   }
-  $node.slideUp("fast");
   $node.empty();
-  $node.text(message);
+  $node.text(message;
   $node.prepend('<span><i class="fa-solid fa-triangle-exclamation"></i></span>');
   $node.slideDown("slow");
   return;
