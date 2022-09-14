@@ -125,6 +125,7 @@ const tweetSubmitEvent = () => {
     }
 
 
+
     $.ajax({
       type: "POST",
       url: url,
@@ -144,6 +145,7 @@ const loadTweets = () => {
   const url = "http://localhost:8080/tweets";
   $.ajax(url, { method: 'GET' })
     .then(function (data) {
+      console.log("data", data);
       renderTweets(data);
     })
     .catch((error) => {
@@ -152,7 +154,8 @@ const loadTweets = () => {
 }
 
 $(document).ready(function () {
-
+  console.log(timeago.format(Date.now()));
+  //renderTweets(data);
   tweetSubmitEvent();
   loadTweets();
 

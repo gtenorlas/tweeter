@@ -42,7 +42,7 @@ const daysDifference = (serialDate) => {
   return Math.round(difference / ONE_DAY);
 };
 
-const resetTweets = () => {
+const resetTweets = () {
   const $container = $("#tweets-container");
   const $section = `
     <section class="new-tweet">
@@ -57,9 +57,8 @@ const resetTweets = () => {
         </form>
       </section>
     `;
-
+    
   $container.empty();
-  $container.append($section);
   
 }
 
@@ -125,12 +124,21 @@ const tweetSubmitEvent = () => {
     }
 
 
+
+
+    //const user = $("#user").text().replace(" ", "%20");
+    const url = `http://localhost:8080/tweets?text=${text}`;
+
+    //const url = "/tweets";
+
+    //console.log("user", user);
+    console.log("text", text);
+
     $.ajax({
       type: "POST",
       url: url,
       data: { text},
       success: () => {
-        $("article").remove();
         loadTweets();
       },
       error: (err) => console.error(err),
@@ -144,6 +152,7 @@ const loadTweets = () => {
   const url = "http://localhost:8080/tweets";
   $.ajax(url, { method: 'GET' })
     .then(function (data) {
+      console.log("data", data);
       renderTweets(data);
     })
     .catch((error) => {
@@ -152,7 +161,8 @@ const loadTweets = () => {
 }
 
 $(document).ready(function () {
-
+  console.log(timeago.format(Date.now()));
+  //renderTweets(data);
   tweetSubmitEvent();
   loadTweets();
 

@@ -144,6 +144,7 @@ const loadTweets = () => {
   const url = "http://localhost:8080/tweets";
   $.ajax(url, { method: 'GET' })
     .then(function (data) {
+
       renderTweets(data);
     })
     .catch((error) => {
