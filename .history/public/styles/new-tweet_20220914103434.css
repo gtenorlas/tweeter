@@ -6,12 +6,12 @@
 form {
   display: flex;
   flex-direction: column;
-  box-shadow: 0px 4px 8px 4px rgba(0, 0, 0, 0.2);
+  box-shadow: 0px 4px 8px 4px rgba(0,0,0,0.2);
   padding-left: 20px;
   padding-right: 20px;
 }
 
-button {
+button{
   font-family: Bungee, sans-serif;
   color: white;
   background-color: #4056A1;
@@ -25,7 +25,7 @@ button {
   justify-content: space-between;
 }
 
-.counter {
+.counter{
   font-family: Bungee, sans-serif;
   color: black;
 }
@@ -38,13 +38,13 @@ button {
   background-color: inherit;
 }
 
-#h4-section-error {
+#h4-section-error{
+  
   border: 3px solid #d1786d;
   color: red;
   text-align: center;
   font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif
 }
 
-.fa-triangle-exclamation {
-  padding-right: 10px;
-}
+fa-triangle-exclamation
+
