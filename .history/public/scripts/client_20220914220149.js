@@ -235,8 +235,6 @@ const scrollEvent = () => {
     } else if (CURRENT_LOCATION < TOP_PAGE) {
       $mainNav.slideDown("fast");
       $aFloat.slideUp("fast");
-      const $textArea = $("#tweet-text");
-      $textArea.focus();
     }
   });
 }

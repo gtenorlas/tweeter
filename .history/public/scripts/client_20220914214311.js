@@ -176,13 +176,12 @@ const rightNavAnimate = () => {
 Handle event when the right nav is clicked to show/hide the form on screen
 */
 const rightNavClickEvent = () => {
-  const $div = $("#div-nav-right");
-
+  $div = $("#div-nav-right");
+  $iAngleDown = $("#angle-solid");
+  $section = $("section");
+  $textArea = $("#tweet-text");
 
   $div.click(() => {
-    const $iAngleDown = $("#angle-solid");
-    const $section = $("section");
-    const $textArea = $("#tweet-text");
     if ($section.is(":visible")) {
       $section.slideUp("slow");
       $iAngleDown.removeClass("fa-angles-up");
@@ -218,25 +217,20 @@ const scrollEvent = () => {
     const $window = $(window);
     const $aFloat = $("#fab-float");
     const $document = $(document);
-    const $mainNav = $("#main-nav");
     const TOP_PAGE = 300 + $window.height();
     const BOTTOM_PAGE = $document.height() - 300;
     const CURRENT_LOCATION = $window.scrollTop() + $window.height();
 
 
-    /*     console.log("scrolltop", $(window).scrollTop());
-        console.log("window height", $(window).height());
-        console.log("document height", $(document).height()); */
+/*     console.log("scrolltop", $(window).scrollTop());
+    console.log("window height", $(window).height());
+    console.log("document height", $(document).height()); */
 
     if (CURRENT_LOCATION > BOTTOM_PAGE) {
-      $mainNav.slideUp("fast");
       $aFloat.slideDown("fast");
 
     } else if (CURRENT_LOCATION < TOP_PAGE) {
-      $mainNav.slideDown("fast");
       $aFloat.slideUp("fast");
-      const $textArea = $("#tweet-text");
-      $textArea.focus();
     }
   });
 }
@@ -245,20 +239,18 @@ const scrollEvent = () => {
 Handle event when the floating fab is clicked to show/hide the form on screen
 */
 const fabClickEvent = () => {
-  const $a = $("#fab-float");
+  $a = $("#fab-float");
+
+
 
   $a.click(() => {
-    $section = $("section");
-
-    if (!$section.is(":visible")) {
+    
+    if ($section.is(":visible")) {
+      $section.slideUp("slow");
+    } else {
       $section.slideDown("slow");
-
+      $textArea.focus();
     }
-
-    const $textArea = $("#tweet-text");
-    $textArea.focus();
-
-
   });
 }
 
@@ -269,6 +261,5 @@ $(document).ready(function () {
   rightNavAnimate();
   rightNavClickEvent();
   scrollEvent();
-  fabClickEvent();
 
 });

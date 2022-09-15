@@ -255,8 +255,6 @@ const fabClickEvent = () => {
 
     }
 
-    const $textArea = $("#tweet-text");
-    $textArea.focus();
 
 
   });

@@ -182,7 +182,7 @@ const rightNavClickEvent = () => {
   $div.click(() => {
     const $iAngleDown = $("#angle-solid");
     const $section = $("section");
-    const $textArea = $("#tweet-text");
+    $textArea = $("#tweet-text");
     if ($section.is(":visible")) {
       $section.slideUp("slow");
       $iAngleDown.removeClass("fa-angles-up");
@@ -235,8 +235,6 @@ const scrollEvent = () => {
     } else if (CURRENT_LOCATION < TOP_PAGE) {
       $mainNav.slideDown("fast");
       $aFloat.slideUp("fast");
-      const $textArea = $("#tweet-text");
-      $textArea.focus();
     }
   });
 }

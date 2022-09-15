@@ -176,13 +176,13 @@ const rightNavAnimate = () => {
 Handle event when the right nav is clicked to show/hide the form on screen
 */
 const rightNavClickEvent = () => {
-  const $div = $("#div-nav-right");
+  $div = $("#div-nav-right");
 
 
   $div.click(() => {
-    const $iAngleDown = $("#angle-solid");
-    const $section = $("section");
-    const $textArea = $("#tweet-text");
+    $iAngleDown = $("#angle-solid");
+    $section = $("section");
+    $textArea = $("#tweet-text");
     if ($section.is(":visible")) {
       $section.slideUp("slow");
       $iAngleDown.removeClass("fa-angles-up");
@@ -235,8 +235,6 @@ const scrollEvent = () => {
     } else if (CURRENT_LOCATION < TOP_PAGE) {
       $mainNav.slideDown("fast");
       $aFloat.slideUp("fast");
-      const $textArea = $("#tweet-text");
-      $textArea.focus();
     }
   });
 }
@@ -249,13 +247,13 @@ const fabClickEvent = () => {
 
   $a.click(() => {
     $section = $("section");
-
+  
     if (!$section.is(":visible")) {
       $section.slideDown("slow");
-
+     
     }
 
-    const $textArea = $("#tweet-text");
+    $textArea = $("#tweet-text");
     $textArea.focus();
 
 
