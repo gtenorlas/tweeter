@@ -223,9 +223,9 @@ const scrollEvent = () => {
     const CURRENT_LOCATION = $window.scrollTop() + $window.height();
 
 
-/*     console.log("scrolltop", $(window).scrollTop());
+    console.log("scrolltop", $(window).scrollTop());
     console.log("window height", $(window).height());
-    console.log("document height", $(document).height()); */
+    console.log("document height", $(document).height());
 
     if (CURRENT_LOCATION > BOTTOM_PAGE) {
       $aFloat.slideDown("fast");

@@ -206,34 +206,10 @@ const loadTweets = () => {
     });
 }
 
-/*
-Monitor the window scroll to determine the location.
-The location will determine wether to hide/show the floating icon at the right-bottom of the screen
-
-*/
-const scrollEvent = () => {
-  const $window = $(window);
-
-  $window.scroll(() => {
-    const $window = $(window);
-    const $aFloat = $("#fab-float");
-    const $document = $(document);
-    const TOP_PAGE = 300 + $window.height();
-    const BOTTOM_PAGE = $document.height() - 300;
-    const CURRENT_LOCATION = $window.scrollTop() + $window.height();
-
-
-/*     console.log("scrolltop", $(window).scrollTop());
-    console.log("window height", $(window).height());
-    console.log("document height", $(document).height()); */
-
-    if (CURRENT_LOCATION > BOTTOM_PAGE) {
-      $aFloat.slideDown("fast");
-
-    } else if (CURRENT_LOCATION < TOP_PAGE) {
-      $aFloat.slideUp("fast");
-    }
-  });
+const scrollEvent=()=>{
+$(window).scroll((event)=>{
+  
+});
 }
 
 $(document).ready(function () {
