@@ -16,9 +16,8 @@ article:hover {
   flex-direction: row;
   justify-content: space-between;
   align-items: center;
-  margin-bottom:0;
-  padding-bottom:0;
-  font-size: 0.75em;
+  magin-bottom:0;
+  
 }
 
 .article-header-left {
