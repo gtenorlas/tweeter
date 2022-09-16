@@ -8,27 +8,27 @@
   flex-direction: column;
   background-color: orange;
   background-image: url("/images/brick-wall-dark.png");
-  padding-top: 60px;
+padding-top:40px;
   font-family: "Source Sans Pro", sans-serif;
 }
 
-.main-header-avatar-div {
-  margin: 0;
-  padding: 0;
+.main-header-avatar-div{
+  margin:0;
+  padding:0;
   line-height: 5px;
-  font-size: 0;
+  font-size:0;
   text-size-adjust: 0%;
-  height: 160px;
+  height:160px;
 }
 
-#user {
-  margin-top: 0;
-  padding-top: 20px;
-  color: white;
-  font-family: Georgia, 'Times New Roman', Times, serif;
+#user{
+  margin-top:0;
+padding:top
+  color:white;
+  font-family:Georgia, 'Times New Roman', Times, serif;
   font-weight: normal;
 }
 
-.avatar {
-  height: 100%;
+.avatar{
+  height:100%;
 }
