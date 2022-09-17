@@ -58,11 +58,6 @@ nav>span {
 
 @media only screen and (max-width: 480px) {
   #div-nav-right {
-    font-size: 0.75em;
+    font-size: 0.7em;
   }
-
-   nav{
-    padding-left: 10px;
-    padding-right: 10px;
-   }
 }

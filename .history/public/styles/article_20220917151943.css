@@ -66,8 +66,14 @@ hr{
 
 
 
+article-header-left
 @media only screen and (max-width: 480px) {
-  .article-header-left {
-    display: none
+  #div-nav-right {
+    font-size: 0.75em;
   }
+
+   nav{
+    padding-left: 10px;
+    padding-right: 10px;
+   }
 }
