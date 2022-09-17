@@ -220,7 +220,7 @@ const scrollEvent = () => {
     const $document = $(document);
     const $mainNav = $("#main-nav");
     const TOP_PAGE = 300 + $window.height();
-    const BOTTOM_PAGE = $document.height() - 100;
+    const BOTTOM_PAGE = $document.height() - 300;
     const CURRENT_LOCATION = $window.scrollTop() + $window.height();
 
 
@@ -248,21 +248,16 @@ const fabClickEvent = () => {
   const $a = $("#fab-float");
 
   $a.click(() => {
-    const $a = $("#fab-float");
     $section = $("section");
 
     if (!$section.is(":visible")) {
-      const $iAngleDown = $("#angle-solid");
-      const $mainNav = $("#main-nav");
+      $section.slideDown("slow");
       $iAngleDown.removeClass("fa-angles-down");
       $iAngleDown.addClass("fa-angles-up");
-      $section.slideDown("slow");
-      $mainNav.slideDown("fast");
 
     }
 
     const $textArea = $("#tweet-text");
-    $a.hide();
     $textArea.focus();
 
 

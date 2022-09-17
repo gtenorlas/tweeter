@@ -220,7 +220,7 @@ const scrollEvent = () => {
     const $document = $(document);
     const $mainNav = $("#main-nav");
     const TOP_PAGE = 300 + $window.height();
-    const BOTTOM_PAGE = $document.height() - 100;
+    const BOTTOM_PAGE = $document.height() - 300;
     const CURRENT_LOCATION = $window.scrollTop() + $window.height();
 
 
@@ -260,9 +260,9 @@ const fabClickEvent = () => {
       $mainNav.slideDown("fast");
 
     }
-
+   
     const $textArea = $("#tweet-text");
-    $a.hide();
+
     $textArea.focus();
 
 
