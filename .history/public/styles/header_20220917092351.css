@@ -47,16 +47,12 @@
   }
 }
 
-@media only screen and (max-width: 480px) {
+@media only screen and (max-width: 480 px) {
   .main-header {
-    height: 200px;
+    height: 350px;
     padding-left: 0;
     margin-top: 0;
     margin-left: 0;
     border-radius: 0;
-  }
-
-  .main-header-avatar-div {
-    display: none;
   }
 }
