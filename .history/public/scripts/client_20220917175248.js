@@ -18,12 +18,12 @@ const resetTweets = () => {
 }
 
 /*
-Escape function to prevent XSS
+Escape function to preventing XSS
 */
 const escapeXSS = function (str) {
-  let $div = document.createElement("div");
-  $div.appendChild(document.createTextNode(str));
-  return $div.innerHTML;
+  let div = document.createElement("div");
+  div.appendChild(document.createTextNode(str));
+  return div.innerHTML;
 };
 
 
@@ -240,15 +240,13 @@ const fabClickEvent = () => {
 
     const $textArea = $("#tweet-text");
     $(this).hide();
+    //$a.hide();
     $textArea.focus();
 
 
   });
 }
 
-/*
-Document Ready
-*/
 $(document).ready(function () {
 
   tweetSubmitEvent();

@@ -18,7 +18,7 @@ const resetTweets = () => {
 }
 
 /*
-Escape function to prevent XSS
+Escape function to preventi XSS
 */
 const escapeXSS = function (str) {
   let $div = document.createElement("div");

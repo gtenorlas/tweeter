@@ -18,12 +18,12 @@ const resetTweets = () => {
 }
 
 /*
-Escape function to prevent XSS
+Escape function to preventing XSS
 */
 const escapeXSS = function (str) {
-  let $div = document.createElement("div");
-  $div.appendChild(document.createTextNode(str));
-  return $div.innerHTML;
+  let div = document.createElement("div");
+  div.appendChild(document.createTextNode(str));
+  return div.innerHTML;
 };
 
 
@@ -178,7 +178,7 @@ const rightNavClickEvent = () => {
 }
 
 /*
-Ajax request to make GET request to retrieve all tweets data
+Ajax request to make GET request to 
 */
 const loadTweets = () => {
   const url = "http://localhost:8080/tweets";
@@ -208,6 +208,10 @@ const scrollEvent = () => {
     const CURRENT_LOCATION = $window.scrollTop() + $window.height();
 
 
+    /*     console.log("scrolltop", $(window).scrollTop());
+        console.log("window height", $(window).height());
+        console.log("document height", $(document).height()); */
+
     if (CURRENT_LOCATION > BOTTOM_PAGE) {
       $mainNav.slideUp("fast");
       $aFloat.slideDown("fast");
@@ -215,6 +219,8 @@ const scrollEvent = () => {
     } else if (CURRENT_LOCATION < TOP_PAGE) {
       $mainNav.slideDown("fast");
       $aFloat.slideUp("fast");
+      const $textArea = $("#tweet-text");
+      $textArea.focus();
     }
   });
 }
@@ -226,6 +232,7 @@ const fabClickEvent = () => {
   const $a = $("#fab-float");
 
   $a.click(() => {
+    const $a = $("#fab-float");
     $section = $("section");
 
     if (!$section.is(":visible")) {
@@ -239,16 +246,13 @@ const fabClickEvent = () => {
     }
 
     const $textArea = $("#tweet-text");
-    $(this).hide();
+    $a.hide();
     $textArea.focus();
 
 
   });
 }
 
-/*
-Document Ready
-*/
 $(document).ready(function () {
 
   tweetSubmitEvent();

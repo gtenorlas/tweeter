@@ -7,9 +7,7 @@
 
 
 
-/*
-Reset the form to it's original view
-*/
+
 const resetTweets = () => {
   $("article").remove();
   $("#tweet-form")[0].reset();
@@ -18,19 +16,15 @@ const resetTweets = () => {
 }
 
 /*
-Escape function to prevent XSS
+Escape function to preventing XSS
 */
 const escapeXSS = function (str) {
-  let $div = document.createElement("div");
-  $div.appendChild(document.createTextNode(str));
-  return $div.innerHTML;
+  let div = document.createElement("div");
+  div.appendChild(document.createTextNode(str));
+  return div.innerHTML;
 };
 
 
-/*
-Iterate through all tweets data
-and add it to the view
-*/
 const renderTweets = function (tweets) {
   // loops through tweets
   // calls createTweetElement for each tweet
@@ -43,9 +37,7 @@ const renderTweets = function (tweets) {
 };
 
 
-/*
-Create view for a single tweet
-*/
+
 const createTweetElement = function (tweet) {
   const $tweet = `
       <article>
@@ -70,10 +62,7 @@ const createTweetElement = function (tweet) {
   return $tweet;
 };
 
-/*
-Function to validate the amount of characters upon submission
-*/
-const isFormValid = (text) => {
+const validateForm = (text) => {
   const MAX_CHARS_ALLOWED = 140;
   const $h4 = $("#h4-section-error");
 
@@ -88,7 +77,7 @@ const isFormValid = (text) => {
 }
 
 /*
-Helper function to animate the node to slide up and slide down
+Helper functiont to animate the node to slide up and slide down
 
 toHide -> true will hide the object, false will animate the object
 message -> the error message that will be displayed on screen
@@ -107,19 +96,15 @@ const animateError = ($node, message, toHide) => {
   return;
 }
 
-/*
-Handle submit event in the form.
-First, it validates that tweet is not empty and it's not more than the max characters allowed.
-Then, it uses ajax to post
-Lastly, it reset's the tweet's form and reload the view for all the tweets
-*/
+
 const tweetSubmitEvent = () => {
   $("#tweet-form").submit((event) => {
     event.preventDefault()
 
+    const MAX_CHARS_ALLOWED = 140;
     const text = $("#tweet-text").val();
 
-    if (!isFormValid(text)) {
+    if (!validateForm(text)) {
       return;
     }
 
@@ -177,9 +162,6 @@ const rightNavClickEvent = () => {
   });
 }
 
-/*
-Ajax request to make GET request to retrieve all tweets data
-*/
 const loadTweets = () => {
   const url = "http://localhost:8080/tweets";
   $.ajax(url, { method: 'GET' })
@@ -208,6 +190,10 @@ const scrollEvent = () => {
     const CURRENT_LOCATION = $window.scrollTop() + $window.height();
 
 
+    /*     console.log("scrolltop", $(window).scrollTop());
+        console.log("window height", $(window).height());
+        console.log("document height", $(document).height()); */
+
     if (CURRENT_LOCATION > BOTTOM_PAGE) {
       $mainNav.slideUp("fast");
       $aFloat.slideDown("fast");
@@ -215,6 +201,8 @@ const scrollEvent = () => {
     } else if (CURRENT_LOCATION < TOP_PAGE) {
       $mainNav.slideDown("fast");
       $aFloat.slideUp("fast");
+      const $textArea = $("#tweet-text");
+      $textArea.focus();
     }
   });
 }
@@ -226,6 +214,7 @@ const fabClickEvent = () => {
   const $a = $("#fab-float");
 
   $a.click(() => {
+    const $a = $("#fab-float");
     $section = $("section");
 
     if (!$section.is(":visible")) {
@@ -239,16 +228,13 @@ const fabClickEvent = () => {
     }
 
     const $textArea = $("#tweet-text");
-    $(this).hide();
+    $a.hide();
     $textArea.focus();
 
 
   });
 }
 
-/*
-Document Ready
-*/
 $(document).ready(function () {
 
   tweetSubmitEvent();

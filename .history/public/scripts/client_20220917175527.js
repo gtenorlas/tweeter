@@ -18,12 +18,12 @@ const resetTweets = () => {
 }
 
 /*
-Escape function to prevent XSS
+Escape function to preventing XSS
 */
 const escapeXSS = function (str) {
   let $div = document.createElement("div");
   $div.appendChild(document.createTextNode(str));
-  return $div.innerHTML;
+  return div.innerHTML;
 };
 
 
