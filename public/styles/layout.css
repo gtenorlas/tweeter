@@ -16,15 +16,15 @@ html {
 /*
  * Global layout stuff
  */
-
 body {
   color: #545149;
   background-color: #f4f1ec;
   font-size: 24px;
   font-family: "Source Sans Pro", sans-serif;
-
   /* Another tablet breakpoint is minimum width of 768px */
-  @media only screen and (min-width: 768px) {
+}
+@media only screen and (min-width: 768px) {
+  body {
     /* Write CSS rules that target Tablets screen sizes upwards - including desktops */
   }
 }
@@ -37,7 +37,6 @@ main {
   background-color: inherit;
   width: 90%;
   align-content: center;
-
   margin-left: auto;
   margin-right: auto;
   flex-direction: column;
@@ -53,22 +52,16 @@ main {
   flex-direction: row;
   gap: 40px;
   padding-top: 80px;
-
   justify-content: space-between;
-
 }
 
 @media only screen and (max-width: 768px) {
-
   .body-div {
     flex-direction: column;
     padding-top: 0;
-
   }
-
   main {
     flex-grow: 3;
     padding-top: 0;
   }
-
 }

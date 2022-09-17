@@ -1,3 +1,6 @@
+$h4-section-error-font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
+$button-background-color: #4056A1
+
 .new-tweet {
   display: flex;
   flex-direction: column;
@@ -43,7 +46,7 @@ button {
   border: 3px solid #d1786d;
   color: red;
   text-align: center;
-  font-family: Cambria, Cochin, Georgia, Times, "Times New Roman", serif;
+  font-family: $h4-section-error-font-family;
 }
 
 .fa-triangle-exclamation {

@@ -1,3 +1,5 @@
+$hover-color: #c29a2d
+
 article {
   display: flex;
   flex-direction: column;
@@ -8,7 +10,7 @@ article {
 }
 
 article:hover {
-  box-shadow: 0 4px 8px 4px rgba(0, 0, 0, 0.5);
+  box-shadow: 0 4px 8px 4px rgba(0,0,0,0.5);
 }
 
 .article-header {
@@ -16,13 +18,13 @@ article:hover {
   flex-direction: row;
   justify-content: space-between;
   align-items: center;
-  margin-bottom: 0;
-  padding-bottom: 0;
+  margin-bottom:0;
+  padding-bottom:0;
   font-size: 0.75em;
 }
 
 .article-header-left {
-  display: inherit;
+  display:inherit;
   flex-direction: row;
   gap: 10px;
   align-items: center;
@@ -39,34 +41,35 @@ article:hover {
   font-weight: 900;
 }
 
-.article-tweet-h4 {
+.article-tweet-h4{
   padding-left: 20px;
   padding-right: 20px;
   padding-top: 0;
-  margin-top: 0;
-  margin-bottom: 0;
+  margin-top:0;
+  margin-bottom:0;
   font-weight: normal;
 }
 
-.article-footer-span-right {
+.article-footer-span-right{
   display: flex;
   flex-direction: row;
   gap: 10px;
 }
 
-hr {
+hr{
   border: 3px solid black;
   width: 100%;
+
 }
 
-.fa-flag:hover,
-.fa-retweet:hover,
-.fa-heart:hover {
+.fa-flag:hover, .fa-retweet:hover, .fa-heart:hover {
   color: #c29a2d;
 }
 
+
+
 @media only screen and (max-width: 480px) {
   .article-header-left {
-    display: none;
+    display: none
   }
 }

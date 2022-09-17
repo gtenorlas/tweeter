@@ -1,3 +1,7 @@
+$background-color: orange;
+$main-header-font-family: "Source Sans Pro", sans-serif;
+$user-font-family: 
+
 .main-header {
   box-sizing: border-box;
   display: flex;
@@ -6,10 +10,10 @@
   justify-content: center;
   align-items: center;
   flex-direction: column;
-  background-color: orange;
+  background-color: $background-color;
   background-image: url("/images/brick-wall-dark.png");
   padding-top: 60px;
-  font-family: "Source Sans Pro", sans-serif;
+  font-family: $main-header-font-family;
   flex-shrink: 2;
   margin-left: 20px;
   margin-top: 40px;
@@ -29,7 +33,7 @@
   margin-top: 0;
   padding-top: 20px;
   color: white;
-  font-family: Georgia, "Times New Roman", Times, serif;
+  font-family: Georgia, 'Times New Roman', Times, serif;
   font-weight: normal;
 }
 
@@ -46,6 +50,7 @@
     border-radius: 0;
   }
 }
+
 @media only screen and (max-width: 480px) {
   .main-header {
     height: 200px;
@@ -54,6 +59,7 @@
     margin-left: 0;
     border-radius: 0;
   }
+
   .main-header-avatar-div {
     display: none;
   }
