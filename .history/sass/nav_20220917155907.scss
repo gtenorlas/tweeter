@@ -1,5 +1,3 @@
-$nav-font-family: Bungee, sans-serif;
-
 nav {
   box-sizing: border-box;
   height: 80px;
@@ -17,7 +15,7 @@ nav {
   position: fixed;
 
   span {
-    font-family: $nav-font-family;
+    font-family: Bungee, sans-serif;
   }
 }
 
@@ -62,9 +60,9 @@ nav {
     font-size: 0.75em;
   }
 
-  nav {
+   nav{
     padding-left: 10px;
     padding-right: 10px;
     background-color: black;
-  }
+   }
 }

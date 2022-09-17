@@ -14,8 +14,7 @@ nav {
   align-items: flex-end;
   position: fixed;
 }
-
-nav > span {
+nav span {
   font-family: Bungee, sans-serif;
 }
 
