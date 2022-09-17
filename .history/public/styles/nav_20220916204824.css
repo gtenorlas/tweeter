@@ -1,0 +1,48 @@
+nav {
+  box-sizing: border-box;
+  height: 80px;
+  width: 100%;
+  background-color: #4056A1;
+  color: #FFFFFF;
+  padding-left: 1.5em;
+  padding-right: 1.5em;
+  padding-bottom: 0.5em;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: flex-end;
+  position: fixed;
+}
+
+nav>span {
+  font-family: Bungee, sans-serif;
+
+}
+
+
+#angle-down {
+  color: red;
+  text-align: center;
+}
+
+.pointer {
+  cursor: pointer;
+}
+
+.angle-down-animate {
+  position: relative;
+  animation: glide 2s ease-in-out alternate infinite;
+}
+
+@keyframes glide {
+  from {
+    left: 0px;
+    top: 0px;
+  }
+
+  to {
+    left: 0px;
+    top: 15px;
+  }
+
+}
