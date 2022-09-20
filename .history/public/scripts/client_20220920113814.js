@@ -38,7 +38,7 @@ const renderTweets = function (tweets) {
 
   //revere to have the newest to the top
   const reverseTweets = tweets.reverse();
-  for (const tweet of reverseTweets) {
+  for (const tweet of tweets) {
     const $tweet = createTweetElement(tweet);
     $('#tweets-container').append($tweet);
   }

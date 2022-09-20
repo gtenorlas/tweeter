@@ -36,9 +36,8 @@ const renderTweets = function (tweets) {
   // calls createTweetElement for each tweet
   // takes return value and appends it to the tweets container
 
-  //revere to have the newest to the top
-  const reverseTweets = tweets.reverse();
-  for (const tweet of reverseTweets) {
+  //revere 
+  for (const tweet of tweets) {
     const $tweet = createTweetElement(tweet);
     $('#tweets-container').append($tweet);
   }
