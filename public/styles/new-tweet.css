@@ -57,3 +57,13 @@ section h2 {
 section {
   display: none;
 }
+
+@media only screen and (max-width: 480px) {
+  form {
+    font-size: 0.45em;
+    font-weight: bold;
+  }
+  form label {
+    padding-bottom: 10px;
+  }
+}

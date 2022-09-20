@@ -69,21 +69,14 @@ hr {
   .article-header-left {
     display: none;
   }
+
   .article-footer {
     flex-wrap: wrap;
-    padding-left: 5px;
-    padding-right: 5px;
-    justify-content: center;
-    font-size: 0.35em;
-    gap: 20px;
   }
-  .article-header {
-    font-size: 0.45em;
-    font-weight: 1000;
-  }
+
   .article-tweet-h4 {
-    font-size: 0.45em;
-    font-weight: bold;
-    word-wrap: break-word;
+    font-size: 30px;
+
   }
+
 }
