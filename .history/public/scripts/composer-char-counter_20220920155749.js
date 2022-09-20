@@ -42,8 +42,8 @@ $(document).ready(function () {
   the counter will still have to function and update it in the screen.
 
   Can't use the same logic as the one in the keyup event as the length of val will always be delayed,
-  example, user press 'a', the val will still be empty,
-  once the user press something else lets say a 'b', the val will be 'a'.
+  example, user press a, the val will still be empty,
+  once the user press something else lets say a b, the val will be a.
   */
   $("#tweet-text").on("keydown", (event) => {
     const $counterOutput = $("#counter");
