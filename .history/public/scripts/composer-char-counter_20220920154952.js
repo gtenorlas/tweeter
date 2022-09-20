@@ -33,13 +33,10 @@ $(document).ready(function () {
   });
 
   /*
-  Just using keydown to count the number of chars based off a user pressing the keyboard
-  is not sufficient enough, as user can highlight more than one characters and just clicking on the backspace,
-  this will result of 1 reduction from the counter, but it will not be accurate as it will have more than
-  once characters deleted at the same  time, hence keyup event is needed.
-
-  Keydown is necessary because when the user is pressing the keyboard and not letting it go, 
-  the counter will still have to function and update it in the screen.
+  Just using keydown to count the number of chars based of a user pressing the keyboard
+  is not sufficient enough, as user can highlight all the text and just clicking on the backspace,
+  this will result of 1 reduction from counter, but it will not be accurate as there are more 
+  
   */
   $("#tweet-text").on("keydown", (event) => {
     const $counterOutput = $("#counter");
